@@ -2,7 +2,6 @@
 #define _UTILS_H
 
 #include <opencv2/imgproc/imgproc_c.h>
-
 #include "ipoint.h"
 
 #include <vector>

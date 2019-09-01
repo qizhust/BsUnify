@@ -1,7 +1,6 @@
 #ifndef _BDoH_H
 #define _BDoH_H
 
-#include <opencv2/imgproc/imgproc_c.h>
 #include <vector>
 #include <iostream>
 #include "runsum.h"

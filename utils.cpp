@@ -1,13 +1,9 @@
 #include <opencv2/opencv.hpp>
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgcodecs.hpp>
 #include <iostream>
 #include <fstream>
 
 #include "utils.h"
 
-using namespace std;
 using namespace cv;
 
 //-------------------------------------------------------
@@ -15,7 +11,7 @@ using namespace cv;
 // Display error message and terminate program
 void error(const char *msg) 
 {
-  cout << "\nError: " << msg;
+  std::cout << "\nError: " << msg;
   getchar();
   exit(0);
 }
@@ -64,14 +60,14 @@ double* halveSize(double *src, int height, int width)
 	return dst;
 }
 
-void saveFeatures(string sFileName, const vector< Ipoint >& ipts) 
+void saveFeatures(std::string sFileName, const std::vector< Ipoint >& ipts) 
 {
-  ofstream ipfile(sFileName.c_str());
+  std::ofstream ipfile(sFileName.c_str());
 
   double sc;
   unsigned count = (unsigned)ipts.size();
 
-  ipfile << 1 << endl << count << endl;
+  ipfile << 1 << std::endl << count << std::endl;
 
   for (unsigned n=0; n<ipts.size(); n++){
     // circular regions with diameter 2 x scale
@@ -80,7 +76,7 @@ void saveFeatures(string sFileName, const vector< Ipoint >& ipts)
             << " " << ipts[n].y
             << " " << 1.0/sc 
             << " " << 0.0     
-            << " " << 1.0/sc << endl;
+            << " " << 1.0/sc << std::endl;
   }
 
   ipfile.close();

@@ -1,10 +1,9 @@
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <iostream>
 #include "utils.h"
 #include "bdoh.h"
 
-using namespace std;
 using namespace cv;
 
 // Constructor simple

@@ -1,7 +1,7 @@
 #ifndef _IPOINT_H
 #define _IPOINT_H
 
-#include <stdlib.h>
+//#include <cstdlib>
 
 class Ipoint {
   public:

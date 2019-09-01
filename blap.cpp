@@ -6,10 +6,9 @@
 #include "utils.h"
 #include "blap.h"
 
-using namespace std;
 using namespace cv;
 
-// Constructor blap4
+// Constructor blap
 BLap::BLap(const Mat& pre_int,
 	std::vector<Ipoint> &ipts, const int directs, const int octaves,
 	const double sigma0, const double sigmaN, const double thres, 

@@ -1,7 +1,6 @@
 #ifndef _BLap_H
 #define _BLap_H
 
-#include <opencv2/imgproc/imgproc_c.h>
 #include <vector>
 #include <iostream>
 #include "runsum.h"

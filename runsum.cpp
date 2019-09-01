@@ -1,11 +1,9 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 #include "runsum.h"
 #include "utils.h"
 
-#include <opencv2/opencv.hpp>
-using namespace std;
 using namespace cv;
 
 //------------------Running sum----------------------//

@@ -13,7 +13,6 @@
 #include "runsum.h"
 #include "utils.h"
 
-using namespace std;
 using namespace cv;
 
 int main (int argc, char **argv)
@@ -35,7 +34,7 @@ int main (int argc, char **argv)
 
   // Print command line help
   if (argc==1) {
-    cerr << "./bunif -i img.pgm -o img.bunif [options]\n"
+    std::cerr << "./bunif -i img.pgm -o img.bunif [options]\n"
          << "  blob response threshold:            -thres 800\n"
          << "  number of octaves:                  -oc 4\n"
          << "  number of scales per octave:        -ss 3\n"
@@ -47,7 +46,7 @@ int main (int argc, char **argv)
 
   // Read the arguments
   int arg = 0;
-  string fn = "out.bunif";
+  std::string fn = "out.bunif";
 
   // border
   int border  = (int)(2*sigma0*pow(2.0,(double)(scales*octaves+1)/(double)scales)+0.5);
@@ -90,17 +89,17 @@ int main (int argc, char **argv)
   if(verb)
   {
 	  if (type == 's')
-		cout << "B-DoH-S:Finding keypoints...\n";
+		std::cout << "B-DoH-S:Finding keypoints...\n";
 	  else if (type == 'c')
-		cout << "B-DoH-C:Finding keypoints...\n"; 
+		std::cout << "B-DoH-C:Finding keypoints...\n"; 
 	  else if (type == '2')
-	  	cout << "B-Lap-2: Finding keypoints...\n";
+	  	std::cout << "B-Lap-2: Finding keypoints...\n";
 	  else if (type == '4')
-	    cout << "B-Lap-4: Finding keypoints...\n";
+	    std::cout << "B-Lap-4: Finding keypoints...\n";
   }
 
   //Keypoints
-  vector<Ipoint> ipts;
+  std::vector<Ipoint> ipts;
 
   if(type == 's')
   {
@@ -190,8 +189,8 @@ int main (int argc, char **argv)
 
   if(verb)
   {
-	  cout<< ipts.size() << " keypoints found" << endl;
-	  cout<< "It took: " << 1000*(float)(end - start) / CLOCKS_PER_SEC  << " mseconds" << endl;
+	  std::cout<< ipts.size() << " keypoints found" << std::endl;
+	  std::cout<< "It took: " << 1000*(float)(end - start) / CLOCKS_PER_SEC  << " mseconds" << std::endl;
   }
 
   // Save features
